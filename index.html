@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideias em Movimento</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#253448;line-height:1.6}
+header{background:linear-gradient(135deg,#153e67,#2876a8);color:white;text-align:center;padding:38px 20px}
+.icone{display:inline-grid;place-items:center;width:66px;height:66px;background:#ffffff25;border:1px solid #ffffff80;border-radius:20px;font-size:32px;margin-bottom:10px}
+header h1{margin:0;font-size:clamp(1.8rem,4vw,2.7rem)}header p{margin:8px auto 0;max-width:620px;color:#e5f2ff}
+nav{background:#102c49;padding:13px 20px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:bold}nav a:hover{text-decoration:underline}
+main{width:min(960px,92%);margin:30px auto}.intro,article{background:white;border:1px solid #d9e3ed;border-radius:16px;box-shadow:0 8px 24px #17375614}
+.intro{padding:22px 25px;margin-bottom:24px}.intro h2,article h2{color:#174b79}
+.posts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}article{padding:22px;display:flex;flex-direction:column}article.featured{grid-column:1/-1;border-top:6px solid #2d83b8}
+.tag{align-self:flex-start;padding:4px 10px;border-radius:999px;background:#e4f2fc;color:#174b79;font-size:.82rem;font-weight:bold}
+article h2{margin:12px 0 3px}.data{font-size:.88rem;color:#68798a;margin-top:0}.arte{min-height:135px;border-radius:12px;background:linear-gradient(135deg,#dceef9,#f3e8ff);display:grid;place-items:center;font-size:58px;margin:12px 0}
+.acoes{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:15px}.curtir{border:0;border-radius:9px;background:#174b79;color:white;padding:10px 15px;cursor:pointer;font-size:.95rem}.curtir:hover{background:#23689e}.curtir[aria-pressed=true]{background:#b72e5a}.contador{color:#68798a;font-size:.92rem}
+footer{text-align:center;padding:22px;color:#64748b}@media(max-width:650px){.posts{grid-template-columns:1fr}article.featured{grid-column:auto}}
+</style>
+</head>
+<body>
+<header id="inicio"><div class="icone" aria-hidden="true">✦</div><h1>Ideias em Movimento</h1><p>Um espaço para descobrir como a tecnologia transforma a maneira de aprender e criar.</p></header>
+<nav aria-label="Navegação principal"><a href="#inicio">Início</a><a href="#posts">Publicações</a><a href="#sobre">Sobre o blog</a></nav>
+<main>
+<section class="intro" id="sobre"><h2>Olá! Que bom ter você aqui.</h2><p>Este blog reúne ideias sobre criatividade, estudo e tecnologia. Cada publicação traz uma reflexão simples e uma dica que podemos colocar em prática no dia a dia.</p></section>
+<section id="posts" aria-label="Publicações" class="posts">
+<article class="featured"><span class="tag">Criatividade digital</span><h2>Pequenas ideias podem virar grandes projetos</h2><p class="data">Publicado por Estudante · Projeto especial</p><div class="arte" role="img" aria-label="Lâmpada representando criatividade">💡</div><p>Para criar algo novo, não precisamos começar sabendo tudo. Podemos dividir uma ideia em etapas, testar possibilidades e aprender com os resultados. Na programação, cada tentativa ajuda a desenvolver uma solução melhor.</p><div class="acoes"><button class="curtir" type="button" aria-pressed="false">♡ Curtir</button><span class="contador" aria-live="polite">0 curtidas</span></div></article>
+<article><span class="tag">Tecnologia</span><h2>Internet com responsabilidade</h2><p class="data">Publicado por Estudante</p><div class="arte" role="img" aria-label="Globo representando a internet">🌐</div><p>A internet facilita a comunicação e o acesso ao conhecimento. Antes de compartilhar uma informação, vale conferir a fonte, respeitar a autoria e pensar no impacto da publicação para outras pessoas.</p><div class="acoes"><button class="curtir" type="button" aria-pressed="false">♡ Curtir</button><span class="contador" aria-live="polite">0 curtidas</span></div></article>
+<article><span class="tag">Aprendizagem</span><h2>Aprender um pouco todos os dias</h2><p class="data">Publicado por Estudante</p><div class="arte" role="img" aria-label="Livro representando estudo">📚</div><p>Estudar com frequência, praticar e revisar os conteúdos ajuda a transformar dúvidas em conhecimento. Pequenos objetivos tornam o processo mais organizado e permitem acompanhar a própria evolução.</p><div class="acoes"><button class="curtir" type="button" aria-pressed="false">♡ Curtir</button><span class="contador" aria-live="polite">0 curtidas</span></div></article>
+</section></main>
+<footer><p>Ideias em Movimento · Projeto de Desenvolvimento de Sistemas</p></footer>
+<script>
+document.querySelectorAll(".curtir").forEach(function(botao){
+ let curtiu=false;
+ botao.addEventListener("click",function(){
+  const contador=botao.parentElement.querySelector(".contador");
+  if(curtiu===false){curtiu=true;botao.setAttribute("aria-pressed","true");botao.textContent="♥ Curtido";contador.textContent="1 curtida";}
+  else{contador.textContent="1 curtida";}
+ });
+});
+</script>
+</body></html>
